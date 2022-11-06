@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/5.0.1/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+</head> 
+<body>
+<div class="main">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active"><i class="iconfont luck-icon-file"></i>基础表格</li>
+  </ol>
+  <form class="row g-2">
+    <div class="col-auto">
+      <select class="form-select">
+        <option value="">全部分类</option>
+        <option value="1">产品分类</option>
+        <option value="2">产品分类</option>
+        <option value="3">产品分类</option>
+      </select>
+    </div>
+    <div class="col-auto">
+      <input type="text" class="form-control" placeholder="输入搜索内容" name="k" />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">搜索</button>
+    </div>
+    <div class="col-auto">
+      <button type="button" class="btn btn-outline-secondary">导出</button>
+    </div>
+  </form>
+  <div class="list-info mt-3">
+    <button type="button" class="btn btn-primary btn-sm">创建</button>
+    <button type="button" class="btn btn-danger btn-sm">删除</button>
+    <span>共有 <strong>9</strong> 条数据</span>
+  </div>
+  <table class="table table-bordered table-hover text-center mt-3">
+    <thead>
+      <tr>
+        <th><input type="checkbox" name="" value=""></th>
+        <th>排序</th>
+        <th>名字</th>
+        <th>分类</th>
+        <th>品牌</th>
+        <th>状态</th>
+        <th>添加时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      	<td><input type="checkbox" /></td>
+        <td>0</td>
+        <td>名字占位 名字占位 名字占位 名字占位</td>
+        <td>测试分类 > 测试分类 > 测试分类</td>
+        <td>无</td>
+        <td><span class="label label-success">上架</span></td>
+        <td>2020-11-12</td>
+        <td>
+          <a class="btn btn-primary btn-sm">编辑</a>
+          <button type="button" class="btn btn-danger btn-sm">删除</button>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td>0</td>
+        <td>名字占位 名字占位 名字占位 名字占位</td>
+        <td>测试分类 > 测试分类 > 测试分类</td>
+        <td>无</td>
+        <td><span class="label label-success">上架</span></td>
+        <td>2020-11-12</td>
+        <td>
+          <a class="btn btn-primary btn-sm">编辑</a>
+          <button type="button" class="btn btn-danger btn-sm">删除</button>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td>0</td>
+        <td>名字占位 名字占位 名字占位 名字占位</td>
+        <td>测试分类 > 测试分类 > 测试分类</td>
+        <td>无</td>
+        <td><span class="label label-success">上架</span></td>
+        <td>2020-11-12</td>
+        <td>
+          <a href="">编辑</a>
+          <a href="">删除</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>下拉操作</p>
+  <table class="table table-bordered table-hover text-center mt-3">
+    <thead>
+      <tr>
+        <th><input type="checkbox" name="" value=""></th>
+        <th>排序</th>
+        <th>名字</th>
+        <th>分类</th>
+        <th>品牌</th>
+        <th>状态</th>
+        <th>添加时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td>0</td>
+        <td>名字占位 名字占位 名字占位 名字占位</td>
+        <td>测试分类 > 测试分类 > 测试分类</td>
+        <td>无</td>
+        <td><span class="label label-success">上架</span></td>
+        <td>2020-11-12</td>
+        <td>
+          <a class="btn btn-primary btn-sm">编辑</a>
+          <div class="btn-group">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              更多
+            </button>
+             <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">删除</a></li>
+                <li><a class="dropdown-item" href="#">删除</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">更新</a></li>
+              </ul>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td>0</td>
+        <td>名字占位 名字占位 名字占位名字占位名字占位名字占位名字占位名字占位名字占位名字占位名字占位 名字占位</td>
+        <td>测试分类 > 测试分类 > 测试分类</td>
+        <td>无</td>
+        <td><span class="label label-success">上架</span></td>
+        <td>2020-11-12</td>
+        <td>
+          <a href="">编辑</a>
+          <div class="btn-group">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-bs-toggle="dropdown">更多</a>
+             <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">删除</a></li>
+                <li><a class="dropdown-item" href="#">删除</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">更新</a></li>
+              </ul>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="table-responsive">
+    <p>始终响应</p>
+    <table class="table table-bordered table-hover text-center mt-3">
+      <thead>
+        <tr>
+          <th >#</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+          <th >Heading</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/popper.min.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/5.0.1/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+</body>
+</html>

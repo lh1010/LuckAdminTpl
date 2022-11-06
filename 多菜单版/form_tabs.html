@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/5.0.1/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<body>
+<div class="main">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><i class="iconfont luck-icon-home"></i><a href="">表单页</a></li>
+    <li class="breadcrumb-item active">分层表单</li>
+  </ol>
+  <div class="form-message"></div>
+  <ul class="nav nav-tabs mt-3" id="tabs">
+    <li class="nav-item"><a class="nav-link active" href="javascript:void(0);" data-id="#general">基础信息</a></li>
+    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" data-id="#seo">SEO</a></li>
+  </ul>
+  <form class="mt-4" id="form" action="" method="post">
+    <div id="general" class="tab-box">
+      <div class="row mb-3">
+        <label class="col-2 col-form-label text-end"><span class="text-danger">*</span> 分类名字：</label>
+        <div class="col-8">
+          <input class="form-control" name="name" placeholder="">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-2 col-form-label text-end">上级分类：</label>
+        <div class="col-auto">
+          <select class="form-select" name="category_id">
+            <option value="">选择分类</option>
+            <option value="1">产品分类</option>
+            <option value="2">产品分类</option>
+            <option value="3">产品分类</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-2 col-form-label text-end">排序：</label>
+        <div class="col-2">
+          <input class="form-control" name="sort" placeholder="">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-2 col-form-label text-end">状态：</label>
+        <div class="col-auto">
+          <select class="form-select" name="status">
+            <option value="1">开启</option>
+            <option value="0">关闭</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div id="seo" class="tab-box">
+      <div class="row mb-3">
+        <label class="col-2 col-form-label text-end">关键字：</label>
+        <div class="col-8">
+          <input class="form-control" name="keyword" placeholder="">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-2 col-form-label text-end">简要描述：</label>
+        <div class="col-8">
+          <textarea class="form-control" rows="3" name="description" placeholder=""></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="form-foot-blank"></div>
+    <div class="form-foot">
+      <div class="box">
+        <button type="submit" class="btn btn-primary">提交</button>
+      </div>
+    </div>
+  </form>
+</div>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/popper.min.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/5.0.1/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<!-- form控件 可拆分为公共文件 satrt -->
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/config.js"></script>
+<script type="text/javascript" src="plugins/jquery.form.js"></script>
+<script type="text/javascript">
+$("#form").validate({
+  rules: {
+    name: { required: true },
+  },
+  messages: {
+    name: {
+      required: '名字不能为空',
+    }
+  },
+  submitHandler: function() {
+    layer.confirm('确认提交？', function() {
+      layer.closeAll();
+      var load = layer.load();
+      $("#form").ajaxSubmit(function(data) {
+        layer.close(load);
+        if (data.code == 401) {
+          goLogin(); return false;
+        }
+        if (data.code == 200) {
+          layer.msg('提交成功', { time: 1500 }, function () { window.location.load(); });
+        } else if (data.code == 400) {
+          layer.msg(data.message); return false;
+        } else {
+          layer.msg('操作失败'); return false;
+        }
+      });
+    });
+  },
+  invalidHandler: function(form, validator) {
+    goTop();
+  }
+});
+</script>
+<!-- form控件 可拆分为公共文件 end -->
+</body>
+</html>

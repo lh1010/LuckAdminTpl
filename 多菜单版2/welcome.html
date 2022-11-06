@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/3.3.7/css/bootstrap.css" >
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+<link rel="stylesheet" type="text/css" href="style/statistics.css">
+</head>
+<body>
+<div class="main">
+	<!-- 简要统计 start -->
+	<div class="row">
+		<div class="col-lg-3 col-xs-6">
+			<div class="small-box bg-aqua">
+				<div class="inner">
+					<h3 id="count_order">183</h3>
+					<p>订单数量</p>
+				</div>
+				<div class="icon">
+					<i class="iconfont">&#xe605;</i>
+				</div>
+				<a href="javascript:void(0);" onclick="layerOpen('order_list.html', '订单管理', '95%', '95%')" class="small-box-footer">查看 <i class="iconfont">&#xe61b;</i></a>
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-6">
+			<div class="small-box bg-green">
+				<div class="inner">
+					<h3 id="count_user">36</h3>
+					<p>注册用户</p>
+				</div>
+				<div class="icon">
+					<i class="iconfont">&#xe66d;</i>
+				</div>
+				<a href="javascript:void(0);" onclick="layerOpen('user_list.html', '用户列表', '95%', '95%')" class="small-box-footer">查看 <i class="iconfont">&#xe61b;</i></a>
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-6">
+			<div class="small-box bg-red">
+				<div class="inner">
+					<h3 id="count_product">56</h3>
+					<p>产品数量</p>
+				</div>
+				<div class="icon">
+					<i class="iconfont">&#xe601;</i>
+				</div>
+				<a href="javascript:void(0);" onclick="layerOpen('product_list.html', '产品列表', '95%', '95%')" class="small-box-footer">查看 <i class="iconfont">&#xe61b;</i></a>
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-6">
+			<div class="small-box bg-yellow">
+				<div class="inner">
+					<h3 id="count_product_category">194</h3>
+					<p>产品类目</p>
+				</div>
+				<div class="icon">
+					<i class="iconfont">&#xe638;</i>
+				</div>
+				<a href="javascript:void(0);" onclick="layerOpen('category_list.html', '产品分类', '95%', '95%')" class="small-box-footer">查看 <i class="iconfont">&#xe61b;</i></a>
+			</div>
+		</div>
+	</div>
+	<!-- 简要统计 end -->
+	<!-- 最新订单 start -->
+	<div class="float-left col-lg-12 col-xs-12">
+		<div class="row">
+			<div class="statistics_title">新订单</div>
+			<table class="table table-bordered table-hover" id="orders">
+				<thead>
+					<tr>
+						<th width="50">序号</th>
+						<th>订单编号</th>
+						<th>总金额</th>
+						<th>用户</th>
+						<th>支付方式</th>
+						<th>状态</th>
+						<th>创建时间</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>1</td><td>1000197</td><td>¥ 1399.00</td><td>u1612160920</td><td>支付宝支付</td><td>待付款</td><td>2021-02-08 10:36:04</td></tr>
+					<tr><td>2</td><td>1000196</td><td>¥ 999.00</td><td>小乐</td><td>支付宝支付</td><td>待付款</td><td>2020-12-30 14:42:41</td></tr>
+					<tr><td>3</td><td>1000195</td><td>¥ 1499.00</td><td>u1612160920</td><td>支付宝支付</td><td>已取消</td><td>2020-12-08 16:18:31</td></tr>
+					<tr><td>4</td><td>1000194</td><td>¥ 0.01</td><td>u1612160920</td><td>支付宝支付</td><td>待收货</td><td>2020-12-08 15:45:51</td></tr>
+					<tr><td>5</td><td>1000193</td><td>¥ 2029.00</td><td>u1612160920</td><td>小程序支付</td><td>已取消</td><td>2020-12-03 17:34:59</td></tr>
+					<tr><td>6</td><td>1000192</td><td>¥ 0.01</td><td>暴走的西瓜</td><td>公众号支付</td><td>待发货</td><td>2020-12-03 17:08:55</td></tr><tr><td>7</td><td>1000191</td><td>¥ 0.01</td><td>暴走的西瓜</td><td>公众号支付</td><td>待发货</td><td>2020-11-30 16:07:19</td></tr>
+					<tr><td>8</td><td>1000190</td><td>¥ 103.00</td><td>暴走的西瓜</td><td>公众号支付</td><td>待付款</td><td>2020-11-30 16:04:47</td></tr>
+					<tr><td>9</td><td>1000189</td><td>¥ 0.01</td><td>u1612160920</td><td>小程序支付</td><td>待发货</td><td>2020-11-30 15:23:28</td></tr>
+					<tr><td>10</td><td>1000188</td><td>¥ 103.00</td><td>暴走的西瓜</td><td>公众号支付</td><td>待付款</td><td>2020-11-30 14:59:40</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- 最新订单 end -->
+	<div class="row">
+		<div class="float-left col-lg-6 col-xs-12">
+			<div class="statistics_title">新产品</div>
+			<table class="table table-bordered table-hover" id="products">
+				<thead>
+					<tr>
+						<th width="50">序号</th>
+						<th>产品名</th>
+						<th>分类</th>
+						<th>创建时间</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>1</td><td title="罗蒙男士西装套装修身职业韩版商务正装休闲西服伴郎新郎结婚礼服">罗蒙男士西装套装修身职业韩版商...</td><td>男装 &gt; 男士外套 &gt; 西服套装</td><td>2020-11-12 16:28:23</td></tr>
+					<tr><td>2</td><td title="报喜鸟西服衬衫定制客服改价专用需客服提供有效">报喜鸟西服衬衫定制客服改价专用...</td><td>男装 &gt; 男士外套 &gt; 西服套装</td><td>2020-11-12 16:25:20</td></tr>
+					<tr><td>3</td><td title="心形海绵洗脸扑 时尚经典心形海绵洗脸扑 潮流心形海绵洗脸扑">心形海绵洗脸扑 时尚经典心形海...</td><td>个护化妆 &gt; 美妆工具 &gt; 粉扑/洗脸扑</td><td>2020-11-12 16:08:39</td></tr>
+					<tr><td>4</td><td title="洗脸扑海绵软核桃洗脸扑洁面扑深层清洁去角质海绵扑磨砂洗颜粉扑">洗脸扑海绵软核桃洗脸扑洁面扑深...</td><td>个护化妆 &gt; 美妆工具 &gt; 粉扑/洗脸扑</td><td>2020-11-12 16:03:08</td></tr>
+					<tr><td>5</td><td title="三本易起泡蜂窝洗脸扑厚洁面海绵扑洗颜棉面扑洗脸海绵大号2片">三本易起泡蜂窝洗脸扑厚洁面海绵...</td><td>个护化妆 &gt; 美妆工具 &gt; 粉扑/洗脸扑</td><td>2020-11-12 15:58:50</td></tr>
+					<tr><td>6</td><td title="Lily Bell/丽丽贝尔双面省水经典亲肤化妆棉卸妆棉面巾222枚*3包">Lily Bell/丽丽贝尔双...</td><td>个护化妆 &gt; 美妆工具 &gt; 化妆棉</td><td>2020-11-12 15:54:32</td></tr>
+					<tr><td>7</td><td title="小浣熊儿童牙膏乳牙换牙期3-6-12岁1防蛀牙无氟套装5可吞咽水果味">小浣熊儿童牙膏乳牙换牙期3-6...</td><td>个护化妆 &gt; 口腔护理 &gt; 牙膏</td><td>2020-11-12 15:49:14</td></tr>
+					<tr><td>8</td><td title="云南白药牙膏薄荷清爽型210g/230g*4支减轻牙龈出血口臭 清新口气">云南白药牙膏薄荷清爽型210g...</td><td>个护化妆 &gt; 口腔护理 &gt; 牙膏</td><td>2020-11-12 15:33:49</td></tr>
+					<tr><td>9</td><td title="黑人超白茶倍健牙膏家庭实惠装去黄牙垢去口臭清新口气亮白美白">黑人超白茶倍健牙膏家庭实惠装去...</td><td>个护化妆 &gt; 口腔护理 &gt; 牙膏</td><td>2020-11-12 15:27:59</td></tr>
+					<tr><td>10</td><td title="资生堂UNO吾诺多效合一面霜男士滋润保湿补水乳液控油护肤品润肤">资生堂UNO吾诺多效合一面霜男...</td><td>个护化妆 &gt; 身体护理 &gt; 润肤</td><td>2020-11-12 15:15:51</td></tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="float-left col-lg-6 col-xs-12">
+			<div class="statistics_title">新用户</div>
+			<table class="table table-bordered table-hover" id="users">
+				<thead>
+					<tr>
+						<th width="50">序号</th>
+						<th>昵称</th>
+						<th>注册时间</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>1</td><td>串串香</td><td>2021-01-25 22:33:57</td></tr><tr><td>2</td><td>小乐</td><td>2020-12-30 14:39:59</td></tr>
+					<tr><td>3</td><td>憧憬此年</td><td>2020-12-18 11:33:24</td></tr>
+					<tr><td>4</td><td>暴走的西瓜</td><td>2020-12-17 17:43:12</td></tr>
+					<tr><td>5</td><td>暴走的西瓜</td><td>2020-11-27 16:19:57</td></tr>
+					<tr><td>6</td><td>暴走的西瓜</td><td>2020-11-27 15:51:25</td></tr>
+					<tr><td>7</td><td>暴走的西瓜</td><td>2020-11-27 15:42:31</td></tr>
+					<tr><td>8</td><td>暴走的西瓜</td><td>2020-11-06 15:51:52</td></tr>
+					<tr><td>9</td><td>暴走的西瓜</td><td>2020-11-06 15:49:18</td></tr>
+					<tr><td>10</td><td>u1604625795</td><td>2020-11-06 09:23:15</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js?v={{:Config('version.admin.version')}}"></script>
+<script type="text/javascript" src="script/common.js"></script>
+</body>
+</html>

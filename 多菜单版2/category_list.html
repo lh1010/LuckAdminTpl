@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/3.3.7/css/bootstrap.css" >
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+<style type="text/css">
+.toggle_group_icon {
+    font-size: 16px;
+}
+</style>
+</head> 
+<body>
+<div class="main">
+    <ol class="breadcrumb">
+        <li class="icon_home iconfont">首页</li>
+        <li>产品管理</li>
+        <li class="active">产品分类</li>
+    </ol>
+    <div class="bg-1 clearfix main-head-info">
+        <a class="btn btn-success btn-sm" href="">创建分类</a>
+        <span class="pull-right margin-t-5">共有 <strong>9</strong> 条数据</span>
+    </div>
+    <div class="main-con">
+        <table class="table table-no-border">
+            <thead>
+                <tr>
+                    <th width="30"></th>
+                    <th width="60">排序</th>
+                    <th class="text-left">分类名</th>
+                    <th>子分类数量</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="group_0">
+                    <td><a href="javascript:void()" onclick="toggle_group(this)" class="toggle_group_icon">[+]</a></td>
+                    <td>0</td>
+                    <td class="text-left">
+                        家用电器<a class="category-addchildboard" href="">添加子分类</a>
+                    </td>
+                    <td>20</td>
+                    <td class="td-status"><span class="label label-success">显示</span></td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                        <button type="button" class="btn btn-danger btn-xs">删除</button>
+                    </td>
+                </tr>
+                <tr class="hide">
+                    <td></td>
+                    <td>0</td>
+                    <td class="text-left">
+                        |—— 大家电<a class="category-addchildboard" href="">添加子分类</a>
+                    </td>
+                    <td>1</td>
+                    <td class="td-status"><span class="label label-success">显示</span></td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                        <button type="button" class="btn btn-danger btn-xs">删除</button>
+                    </td>
+                </tr>
+                <tr class="hide">
+                    <td></td>
+                    <td>0</td>
+                    <td class="text-left">
+                        |—— |—— 平板电视<a class="category-addchildboard" href="">添加子分类</a>
+                    </td>
+                    <td>20</td>
+                    <td class="td-status"><span class="label label-danger">关闭</span></td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                        <button type="button" class="btn btn-danger btn-xs">删除</button>
+                    </td>
+                </tr>
+
+                <tr class="group_0">
+                    <td><a href="javascript:void()" onclick="toggle_group(this)" class="toggle_group_icon">[+]</a></td>
+                    <td>0</td>
+                    <td class="text-left">
+                        个护化妆<a class="category-addchildboard" href="">添加子分类</a>
+                    </td>
+                    <td>20</td>
+                    <td class="td-status"><span class="label label-success">显示</span></td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                        <button type="button" class="btn btn-danger btn-xs">删除</button>
+                    </td>
+                </tr>
+                <tr class="hide">
+                    <td></td>
+                    <td>0</td>
+                    <td class="text-left">
+                        |—— 大家电<a class="category-addchildboard" href="">添加子分类</a>
+                    </td>
+                    <td>1</td>
+                    <td class="td-status"><span class="label label-success">显示</span></td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                        <button type="button" class="btn btn-danger btn-xs">删除</button>
+                    </td>
+                </tr>
+                <tr class="hide">
+                    <td></td>
+                    <td>0</td>
+                    <td class="text-left">
+                        |—— |—— 平板电视<a class="category-addchildboard" href="">添加子分类</a>
+                    </td>
+                    <td>20</td>
+                    <td class="td-status"><span class="label label-danger">关闭</span></td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                        <button type="button" class="btn btn-danger btn-xs">删除</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="color-red text-center hide">数据为空！</p>
+    </div>
+</div>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js?v={{:Config('version.admin.version')}}"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script type="text/javascript">
+function toggle_group(thisNode) {
+    if ($(thisNode).html() == '[-]') {
+        $(thisNode).html('[+]');
+    } else {
+        $(thisNode).html('[-]');
+    }
+    $(thisNode).parents('.group_0').nextUntil('.group_0').toggleClass('hide');
+} 
+</script>
+</body>
+</html>

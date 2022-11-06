@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/3.3.7/css/bootstrap.css" >
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<body>
+<div class="main">
+    <ol class="breadcrumb">
+        <li class="icon_home iconfont">首页</li>
+        <li>订单物流</li>
+        <li class="active">配送方式</li>
+    </ol>
+    <div class="bg-1 clearfix main-head-info">
+        <a class="btn btn-success btn-sm" href="">创建配送方式</a>
+        <span class="pull-right margin-t-5">共有数据：<strong>8</strong> 条</span>
+    </div>
+    <div class="main-con">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" name="" value=""></th>
+                    <th>配送方式名称</th>
+                    <th>配送方式描述</th>
+                    <th>排序</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>圆通速递</td>
+                    <td width="50%" title="上海圆通物流（速递）有限公司经过多年的网络快速发展">上海圆通物流（速递）有限公司经过多年的网络快速发展</td>
+                    <td>10</td>
+                    <td><span class="label label-success">开启</span></td>
+                    <td>
+                        <a class="btn btn-primary btn-xs" href="">编辑</a>
+                        <button type="button" class="btn btn-danger btn-xs" onClick="delAction(1)">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>圆通速递</td>
+                    <td width="50%" title="上海圆通物流（速递）有限公司经过多年的网络快速发展">上海圆通物流（速递）有限公司经过多年的网络快速发展</td>
+                    <td>10</td>
+                    <td><span class="label label-success">开启</span></td>
+                    <td>
+                        <a class="btn btn-primary btn-xs" href="">编辑</a>
+                        <button type="button" class="btn btn-danger btn-xs" onClick="delAction(1)">删除</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="page">
+            <ul class="pagination"><li class="disabled"><span>«</span></li> <li class="active"><span>1</span></li><li><a href="">2</a></li><li><a href="">3</a></li><li><a href="">4</a></li><li><a href="">»</a></li></ul>        
+        </div>
+        <p class="color-red text-center none">数据为空！</p>
+    </div>
+</div>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script type="text/javascript">
+function delAction(id = '') {
+    layer.confirm('确认删除？', function(index){
+        layer.closeAll(); var load = layer.load();
+        $.ajax({
+            type: 'GET',
+            url: '',
+            dataType: 'json',
+            success: function(res) {
+                layer.close(load);
+                if (res.code == 401) {
+                    goLogin(); return false;
+                }
+                if (res.code == 200) {
+                    layer.msg('提交成功', {time: 1500}, function() {window.location.reload();});
+                } else if (res.code == 400) {
+                    layer.msg(res.message); return false;
+                } else {
+                    layer.msg('操作失败'); return false;
+                }
+            }
+        });     
+    });
+}    
+</script>
+</body>
+</html>

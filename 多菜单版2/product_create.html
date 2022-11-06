@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/3.3.7/css/bootstrap.css" >
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+<link rel="stylesheet" type="text/css" href="style/product.css" />
+</head>
+<body>
+<div class="main">
+    <ol class="breadcrumb">
+        <li class="icon_home iconfont">首页</li>
+        <li><a href="">产品管理</a></li>
+        <li class="active">创建产品</li>
+    </ol>
+    <div class="main-head-info error-info bg-danger"></div>
+    <div class="main-con">
+        <ul class="nav nav-tabs" id="tabs">
+            <li class="active"><a href="javascript:void(0)" data-id="#a">基础信息</a></li>
+            <li><a href="javascript:void(0)" data-id="#b">销售信息</a></li>
+            <li><a href="javascript:void(0)" data-id="#c">图文描述</a></li>
+        </ul>
+        <form class="form-horizontal margin-t-30" action="/" method="post" id="form" autocomplete="off">
+            <div id="a" class="tab-box">
+                <div class="form-group">
+                    <span class="col-sm-2 control-label">产品分类：</span>
+                    <div class="col-sm-8">
+                    	<p class="form-control-static">箱包鞋帽 > 潮流女包 > 双肩包  <a type="submit" class="btn btn-warning btn-xs margin-l-5" href="">编辑</a></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label"><span class="color-red">*</span> 产品名：</span>
+                    <div class="col-sm-8 input-group">
+                    	<input class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label">品牌：</span>
+                    <div class="col-sm-2 input-group">
+                        <select class="form-control" name="category_id">
+                            <option>请选择</option>
+                            <option>苹果</option>
+                            <option>华为</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label">包邮：</span>
+                    <div class="col-sm-8 input-group">
+                        <select class="form-control width-100" name="freight">
+                            <option value="1">是</option>
+                            <option value="2">否</option>
+                        </select>
+                        <div class="select-freight none">
+                            <select class="form-control" name="freight_id">
+                                <option value="">选择运费模板</option>
+                                <option value="14">件数计算案例</option>
+                                <option value="15">重量计算案例</option>
+                                <option value="16">体积计算案例</option>
+                                <option value="17">测试模板</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label">重量：</span>
+                    <div class="col-sm-2 input-group">
+                        <input class="form-control" name="weight"><span class="input-group-addon">克</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label">体积：</span>
+                    <div class="col-sm-2 input-group">
+                      <input class="form-control" name="volume"><span class="input-group-addon">立方米</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label">排序：</span>
+                    <div class="col-sm-2 input-group">
+                        <input class="form-control" name="sort">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label">状态：</span>
+                    <div class="col-sm-2 input-group">
+                        <select class="form-control" name="status">
+                            <option value="1">上架</option>
+                            <option value="0">下架</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- 销售信息 satrt -->
+            <div id="b" class="tab-box">
+                <div class="form-group">
+                    <span class="col-sm-2 control-label"><i class="iconfont iconfont-question" data-toggle="tooltip" data-placement="top" data-original-title="不同产品模型对应不同销售规格和产品属性"></i> 模型：</span>
+                    <div class="col-sm-2 input-group">
+                        <select class="form-control" name="product_model_id">
+                            <option value="">请选择产品模型</option>
+                            <option value="1">服装</option>
+                            <option value="2">鞋子</option>
+                            <option value="3">手机</option>
+                            <option value="4">电视</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label"><i class="iconfont iconfont-question" data-toggle="tooltip" data-placement="top" data-original-title="为空自动生成"></i> 商家编码：</span>
+                    <div class="col-sm-2 input-group">
+                        <input class="form-control" name="sku">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label"><span class="color-red">*</span> 销售价：</span>
+                    <div class="col-sm-2 input-group">
+                        <input class="form-control" name="sale_price">
+                        <span class="input-group-addon">元</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label">库存：</span>
+                    <div class="col-sm-2 input-group">
+                        <input class="form-control" name="stock">
+                    </div>
+                </div>
+            </div>
+            <!-- 销售信息 end -->
+            <!-- 图文描述 satrt -->
+            <div id="c" class="tab-box">
+                <div class="form-group" id="product_image">
+                    <span class="col-sm-2 control-label">产品图片：</span>
+                    <div class="col-sm-10 input-group">
+                        <div class="product_images">
+                            <div class="product_image fmr wh-80x80" data-name="image[999]"></div>
+                            <div class="product_image sld fmr wh-80x80" data-name="image[]"></div>
+                            <div class="product_image sld fmr wh-80x80" data-name="image[]"></div>
+                            <div class="product_image sld fmr wh-80x80" data-name="image[]"></div>
+                            <div class="product_image sld fmr wh-80x80" data-name="image[]"></div>
+                            <div class="product_image sld fmr wh-80x80" data-name="image[]"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label">产品详情：</span>
+                    <div class="col-sm-8 input-group">
+                        <textarea class="summernote" name="content"></textarea>
+                    </div>
+                </div>
+            </div>   
+            <!-- 图文描述 end -->
+            <div class="foot_btn_blank"></div>
+            <div class="foot_btn">
+                <div class="box">
+                    <button type="submit" class="btn btn-primary">提交产品信息</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<!-- jquery.validation -->
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/config.js"></script>
+<script type="text/javascript" src="plugins/jquery.form.js"></script>
+<!-- product.js -->
+<script type="text/javascript" src="script/product.js"></script>
+<script type="text/javascript">
+    $("#form").validate({
+        rules: {
+            name: { required: true },
+        },
+        messages: {
+            name: '产品名不能为空',
+        },
+        submitHandler: function () {
+            layer.confirm('确认提交？', function() {
+                layer.closeAll();
+                var load = layer.load();
+                $("#form").ajaxSubmit(function(data) {
+                    layer.close(load);
+                    if (data.code == 401) {
+                        goLogin(); return false;
+                    }
+                    if (data.code == 200) {
+                        layer.msg('提交成功', { time: 1500 }, function () { window.location.href = '{{:url("/admin/product")}}' });
+                    } else if (data.code == 400) {
+                        layer.msg(data.message); return false;
+                    } else {
+                        layer.msg('操作失败'); return false;
+                    }
+                });
+            });
+        },
+        invalidHandler: function (form, validator) {
+            goTop();
+        }
+    });
+</script>
+<!-- summernote编辑器 可分拆为公共文件 satrt -->
+<link rel="stylesheet" type="text/css" href="plugins/summernote/summernote.css" />
+<script type="text/javascript" src="plugins/summernote/summernote.js"></script>
+<script src="plugins/summernote/lang/summernote-zh-CN.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.summernote').summernote({
+    	placeholder: '输入内容......',
+    	lang:'zh-CN',
+    	toolbar: [
+    		['style', ['style']],
+		    ['style', ['bold', 'italic', 'underline', 'clear']],
+		    ['font', ['strikethrough', 'superscript', 'subscript']],
+		    ['fontsize', ['fontsize']],
+		    ['color', ['color']],
+		    ['para', ['ul', 'ol', 'paragraph']],
+		    ['mypicture', ['mypicture']],
+		],
+		height: 300,
+    	fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36'],
+		buttons: {
+		    mypicture: mypicture
+		}
+    });
+});
+
+var mypicture = function (context) {
+  var ui = $.summernote.ui;
+  var button = ui.button({
+    contents: '<i class="note-icon-picture"/>',
+    tooltip: '插入图片',
+    click: function () {
+    	$(this).parents('.note-editor').prev('.summernote').addClass('summernote_checked');
+      	layer.open({
+			type: 2,
+			title: '图片空间',
+			area: ['65%', '65%'],
+			maxmin: true,
+			content: '/admin/file/fileManager?use_ident=summernote',
+		});
+    }
+  });
+  return button.render();
+}	
+</script>
+<!-- summernote编辑器 可分拆为公共文件 satrt -->
+</body>
+</html>

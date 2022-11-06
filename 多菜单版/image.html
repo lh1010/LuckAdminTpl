@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>文件管理</title>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/5.0.1/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+<style>
+html, body {
+  max-width: 827px;
+  min-width: 0;
+  margin: 0 auto;
+  position: relative;
+}
+.file_sapce {
+  padding: 18px;
+}
+.file_sapce_manager {
+  padding: 0;
+}
+.file_sapce_top {
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+.file_sapce_top .btn {
+  background-color: #e7e7e7;
+}
+.file_sapce_top i {
+  color: #999;
+}
+.file_sapce_top #btn_upload {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.file_sapce_top #btn_upload i {
+  color: #fff;
+}
+.file_sapce_top #btn_delete {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.file_sapce_top #btn_delete i {
+  color: #fff;
+}
+.file_sapce_box {
+  overflow: hidden;
+}
+.file_sapce_box .item {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.file_sapce_box .item:nth-child(7n) {
+  margin-right: 0;
+}
+.file_sapce_box .item img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #eee;
+  padding: 5px;
+}
+.file_sapce_box .item img:hover {
+  border: 1px solid rgba(48,137,220,0.5);
+}
+.file_sapce_box .item .filename {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  width: 90%;
+  margin: 5px auto 0;
+  text-align: center;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow:ellipsis;
+  cursor: pointer;
+}
+.file_sapce_box .item .filename .form-check {
+  margin-bottom: 0;
+}
+.file_sapce_box .item .filename .form-check-label {
+  cursor: pointer;
+}
+
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  border-radius: 4px;
+  font-size: 12px;
+  margin: 15px 0 0 0;
+}
+.pagination > li {
+  display: inline;
+}
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42;
+  color: #007bff;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  z-index: 2;
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+</style>
+</head>
+<body>
+<input type="hidden" id="use_ident" value="{{Request()->use_ident}}">
+<div class="file_sapce">
+  <div class="file_sapce_top">
+    <a href="" class="btn btn-default btn-sm"><i class="iconfont">&#xe623;</i></a>
+    <a class="btn btn-default btn-sm" href="javascript:window.location.reload();"><i class="iconfont">&#xe68c;</i></a>
+    <button class="btn btn-primary btn-sm" id="btn_upload"><i class="iconfont">&#xe665;</i></button>
+    <button class="btn btn-default btn-sm" id="btn_folder"><i class="iconfont">&#xe604;</i></button>
+    <button class="btn btn-danger btn-sm" id="btn_delete"><i class="iconfont">&#xe676;</i></button>
+  </div>
+  <div class="file_sapce_box">
+    <div class="item" title="name">
+      <a href=""><img src="images/dir.png"></a>
+      <div class="filename">
+        <div class="form-check">
+          <label class="form-check-label" for="ccd_1">
+            <input type="checkbox" class="form-check-input"  name="filepath" id="ccd_1" value="">文件名
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="item" title="name">
+      <img src="images/default.png" class="file">
+      <div class="filename">
+        <div class="form-check">
+          <label class="form-check-label" for="ccd_2">
+            <input type="checkbox" class="form-check-input"  name="filepath" id="ccd_2" value="">文件名
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="item" title="name">
+      <img src="images/default.png" class="file">
+      <div class="filename">
+        <div class="form-check">
+          <label class="form-check-label" for="ccd_3">
+            <input type="checkbox" class="form-check-input"  name="filepath" id="ccd_3" value="">文件名
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<form action="" method="post" id="fm_upload" enctype="multipart/form-data" style="display:none">
+  <input type="hidden" name="dir" value="">
+  <input type="file" name="file" id="fm_upload_file" />
+</form>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/popper.min.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/5.0.1/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<!-- form控件 可拆分为公共文件 satrt -->
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/config.js"></script>
+<script type="text/javascript" src="plugins/jquery.form.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+  $('#btn_upload').click(function() {
+    $('#fm_upload_file').click();
+  })
+
+  $('#btn_folder').popover({
+    html: true,
+    placement: 'bottom',
+    trigger: 'click',
+    sanitize: false,
+    title: '新建文件夹',
+    content: function() {
+      return `
+        <div class="input-group">
+          <input type="text" name="folder" placeholder="文件夹" class="form-control">
+          <button type="button" class="btn btn-outline-secondary" onclick="createFolder();"><i class="iconfont">&#xe600;</i></button>
+        </div>
+      `;
+    }
+  });
+
+})
+
+$('#fm_upload_file').change(function() {
+  $('#fm_upload').ajaxSubmit(function(res) {
+    if (res.code == 200) {
+      window.location.reload();
+      return false;
+    } else {
+      layer.msg('上传失败');
+      return false;
+    }
+  })
+})
+
+function createFolder()
+{
+  $.ajax({
+    url: "{{Route('admin.file.createFolder')}}",
+    type: 'post',
+    data: {
+      dir: '{{Request()->dir}}',
+      new_dir: $('input[name="folder"]').val(),
+      _token: $('input[name="_token"]').val()
+    },
+    success: function(res) {
+      if (res.code == 200) {
+        window.location.reload();
+        return false;
+      } else {
+        layer.msg(res.message);
+        return false;
+      }
+    }
+  })
+}
+
+$('#btn_delete').click(function() {
+  var filepaths = [];
+  $("input[name='filepath']:checked").each(function(i){
+    filepaths[i] = $(this).val();
+  });
+  if (filepaths.length == 0) {
+    layer.msg('请选择要删除文件');
+    return false;
+  }
+  layer.confirm('确定删除？', function() {
+    layer.closeAll();
+    var load = layer.load();
+    $.ajax({
+      url: "{{Route('admin.file.delete')}}",
+      type: 'post',
+      data: {
+        filepaths: filepaths,
+        _token: $('input[name="_token"]').val()
+      },
+      success: function(res) {
+        layer.close(load);
+        if (res.code == 200) {
+          window.location.reload();
+        } else {
+          layer.msg(res.message);
+        }
+      }
+    })
+  });
+})
+
+$('.file').click(function() {
+  console.log($('#use_ident').val());
+  if ($('#use_ident').val() == '' && parent.$('.fmr_current_ident').length < 1) return false;
+  console.log(123);
+  // 兼容 summernote 编辑器
+  if ($('#use_ident').val() == 'editormd') {
+    parent.appendMarkdown('![](' + $(this).attr('src') + ')');
+  } else {
+    var input_name = parent.$('.fmr_current_ident').attr('data-name') != undefined ? parent.$('.fmr_current_ident').attr('data-name') : 'file';
+    var str = '';
+    str += '<input name="'+input_name+'" type="hidden" value="'+$(this).attr('src')+'" />';
+    str += '<img src="'+$(this).attr('src')+'" />';
+    str += '<i class="iconfont fmr_remove"></i>';
+    parent.$('.fmr_current_ident').addClass('uploaded');
+    parent.$('.fmr_current_ident').html(str);
+  }
+  var index = parent.layer.getFrameIndex(window.name);
+  parent.layer.close(index);
+})
+</script>
+</body>
+</html>

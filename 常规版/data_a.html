@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/5.0.1/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+<style type="text/css">
+.bg-aqua {
+  background-color: #00c0ef !important;
+}
+.bg-green {
+  background-color: #00a65a !important;
+}
+.bg-yellow {
+  background-color: #f39c12 !important;
+}
+.bg-red {
+  background-color: #dd4b39 !important;
+}
+.small-box {
+  border-radius: 2px;
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+.small-box > .inner {
+  padding: 10px;
+  color: #fff !important;
+}
+.small-box h3 {
+  font-size: 38px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  white-space: nowrap;
+  padding: 0;
+}
+.small-box p {
+  font-size: 15px;
+}
+.small-box .icon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 0;
+  color: rgba(0,0,0,0.15);
+}
+.small-box .icon i {
+  -webkit-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;
+  font-size: 55px;
+}
+.small-box .icon:hover i {
+  font-size: 60px;
+}
+.small-box > .small-box-footer {
+  position: relative;
+  text-align: center;
+  padding: 10px 0;
+  color: #fff;
+  color: rgba(255,255,255,0.8);
+  display: block;
+  z-index: 10;
+  background: rgba(0,0,0,0.1);
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+<div class="main">
+	<ol class="breadcrumb">
+    <li class="breadcrumb-item active"><i class="iconfont luck-icon-file"></i>数组总览</li>
+  </ol>
+	<!-- 简要统计 start -->
+	<div class="row">
+		<div class="col-lg-3 col-xs-6">
+			<div class="small-box bg-aqua">
+				<div class="inner">
+					<h3 id="count_order">183</h3>
+					<p>订单数量</p>
+				</div>
+				<div class="icon">
+					<i class="iconfont">&#xe605;</i>
+				</div>
+				<a href="javascript:void(0);" onclick="layerOpen('page.html', '订单管理', '95%', '95%')" class="small-box-footer">查看 <i class="iconfont luck-icon-look"></i></a>
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-6">
+			<div class="small-box bg-green">
+				<div class="inner">
+					<h3 id="count_user">36</h3>
+					<p>注册用户</p>
+				</div>
+				<div class="icon">
+					<i class="iconfont">&#xe66d;</i>
+				</div>
+				<a href="javascript:void(0);" onclick="layerOpen('page.html', '用户列表', '95%', '95%')" class="small-box-footer">查看 <i class="iconfont luck-icon-look"></i></a>
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-6">
+			<div class="small-box bg-red">
+				<div class="inner">
+					<h3 id="count_product">56</h3>
+					<p>产品数量</p>
+				</div>
+				<div class="icon">
+					<i class="iconfont">&#xe601;</i>
+				</div>
+				<a href="javascript:void(0);" onclick="layerOpen('page.html', '产品列表', '95%', '95%')" class="small-box-footer">查看 <i class="iconfont luck-icon-look"></i></a>
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-6">
+			<div class="small-box bg-yellow">
+				<div class="inner">
+					<h3 id="count_product_category">194</h3>
+					<p>产品类目</p>
+				</div>
+				<div class="icon">
+					<i class="iconfont">&#xe638;</i>
+				</div>
+				<a href="javascript:void(0);" onclick="layerOpen('page.html', '产品分类', '95%', '95%')" class="small-box-footer">查看 <i class="iconfont luck-icon-look"></i></a>
+			</div>
+		</div>
+	</div>
+	<!-- 简要统计 end -->
+</div>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/5.0.1/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+</body>
+</html>

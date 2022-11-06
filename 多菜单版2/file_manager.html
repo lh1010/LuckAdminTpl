@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图片空间</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/3.3.7/css/bootstrap.css" >
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+<style>
+body {
+    min-width: 0;
+}
+</style>
+</head>
+<body>
+<input type="hidden" id="use_ident" value="">
+<div class="image_space">
+    <div class="image_space_top">
+        <a href="" class="btn btn-default btn-sm"><i class="iconfont">&#xe623;</i></a>
+        <a class="btn btn-default btn-sm" href="javascript:window.location.reload();"><i class="iconfont">&#xe68c;</i></a>
+        <button class="btn btn-primary btn-sm" id="btn_upload"><i class="iconfont">&#xe665;</i></button>
+        <button class="btn btn-default btn-sm" id="btn_folder"><i class="iconfont">&#xe604;</i></button>
+        <button class="btn btn-danger btn-sm" id="btn_delete"><i class="iconfont">&#xe676;</i></button>
+        <button class="btn btn-default btn-sm none" id="btn_set"><i class="iconfont">&#xe64c;</i></button>
+    </div>
+    <div class="image_space_box">
+        <div class="item">
+            <a href=""><img src="images/files.png"></a>
+            <div class="filename" title="名字">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"  name="filepath" value=""> 名字
+                  </label>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <a href=""><img src="images/files.png"></a>
+            <div class="filename" title="名字">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"  name="filepath" value=""> 名字
+                  </label>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <a href=""><img src="images/files.png"></a>
+            <div class="filename" title="名字">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"  name="filepath" value=""> 名字
+                  </label>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/demo/product/1.jpg" class="file">
+            <div class="filename" title="名字">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"  name="filepath" value=""> 名字
+                  </label>
+                </div>
+            </div>
+        </div>
+        <p class="color-666 margin-t-5 none">暂无图片</p>
+    </div>
+    <div class="page">
+        <ul class="pagination"><li class="disabled"><span>«</span></li> <li class="active"><span>1</span></li><li><a href="">2</a></li><li><a href="">3</a></li><li><a href="">4</a></li><li><a href="">»</a></li></ul>        
+    </div>  
+</div>
+<form action="" method="post" id="fm_upload" enctype="multipart/form-data" style="display:none">
+    <input type="hidden" name="dir" value="">
+    <input type="file" name="files[]" id="fm_upload_file" multiple />
+</form>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<!-- jquery.validation -->
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/config.js"></script>
+<script type="text/javascript" src="plugins/jquery.form.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#btn_upload').click(function() {
+        $('#fm_upload_file').click();
+    })
+})
+
+$('#fm_upload_file').change(function() {
+    $('#fm_upload').ajaxSubmit(function(res) {
+        if (res.code == 200) {
+            window.location.reload();
+            return false;
+        } else {
+            layer.msg('上传失败');
+            return false;
+        }
+    })
+})
+
+$('#btn_folder').popover({
+    html: true,
+    placement: 'bottom',
+    trigger: 'click',
+    title: '新建文件夹',
+    content: function() {
+        html  = '<div class="input-group">';
+        html += '  <input type="text" name="folder" placeholder="文件夹" class="form-control">';
+        html += '  <span class="input-group-btn"><button type="button" class="btn" onclick="createFolder();"><i class="iconfont">&#xe600;</i></button></span>';
+        html += '</div>';
+        return html;
+    }
+});
+
+$('#btn_set').click(function() {
+    $('.image_space .filename input').show();
+})
+
+$('#btn_delete').click(function() {
+    var filepaths = [];
+    $("input[name='filepath']:checked").each(function(i){
+          filepaths[i] = $(this).val();
+    });
+    if (filepaths.length == 0) {
+        layer.msg('请选择要删除文件');
+        return false
+    }
+
+    layer.confirm('确定删除？', function() {
+        layer.closeAll();
+        var load = layer.load();
+        $.ajax({
+            url: '',
+            type: 'post',
+            data: {
+                filepaths: filepaths
+            },
+            success: function(res) {
+                layer.close(load);
+                if (res.code == 200) {
+                    window.location.reload();
+                    return false;
+                } else {
+                    layer.msg(res.message);
+                    return false;
+                }
+            }
+        })
+    });
+})
+
+function createFolder()
+{
+    var load = layer.load();
+    $.ajax({
+        url: "",
+        type: 'post',
+        data: {
+            dir: '{{:Request()->dir}}',
+            new_dir: $('input[name="folder"]').val()
+        },
+        success: function(res) {
+            layer.close(load);
+            if (res.code == 200) {
+                window.location.reload();
+                return false;
+            } else {
+                layer.msg(res.message);
+                return false;
+            }
+        }
+    })
+}
+
+$('.file').click(function() {
+    var input_name = parent.$('.fmr_current_ident').attr('data-name') != undefined ? parent.$('.fmr_current_ident').attr('data-name') : 'file';
+    var str = '';
+    str += '<input name="'+input_name+'" type="hidden" value="'+$(this).attr('src')+'" />';
+    str += '<img src="'+$(this).attr('src')+'" />';
+    str += '<i class="iconfont fmr_remove"></i>';
+    parent.$('.fmr_current_ident').css('background-size', '0%');
+    parent.$('.fmr_current_ident').html(str);
+    var index = parent.layer.getFrameIndex(window.name);
+    parent.layer.close(index);
+})
+</script>
+</body>
+</html>

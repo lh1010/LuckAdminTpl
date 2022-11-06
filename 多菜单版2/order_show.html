@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/3.3.7/css/bootstrap.css" >
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<body>
+<div class="main">
+    <ol class="breadcrumb">
+        <li class="icon_home iconfont">首页</li>
+        <li>订单物流</li>
+        <li><a href="javascript:history.go(-1);">订单管理</a></li>
+        <li class="active">订单详情</li>
+    </ol>
+    <div class="main-con">
+        <div class="row">
+            <div class="col-xs-6">
+                <p style="font-size: 16px"><strong>信息总览</strong></p>
+                <table class="table table-bordered table-hover">
+                    <tbody>
+                        <tr>
+                            <td><strong>订单 ID</strong></td>
+                            <td class="text-left">258</td>
+                        </tr>
+                        <tr>
+                            <td><strong>订单编号</strong></td>
+                            <td class="text-left">1000195</td>
+                        </tr>
+                        <tr>
+                            <td><strong>用户昵称</strong></td>
+                            <td class="text-left">u1612160920</td>
+                        </tr>
+                        <tr>
+                            <td><strong>支付方式</strong></td>
+                            <td class="text-left">支付宝支付</td>
+                        </tr>
+                        <tr>
+                            <td><strong>购买方式</strong></td>
+                            <td class="text-left">立即购买</td>
+                        </tr>
+                        <tr>
+                            <td><strong>总金额</strong></td>
+                            <td class="text-left">¥ 1499.00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>订单状态</strong></td>
+                            <td class="text-left">已取消</td>
+                        </tr>
+                        <tr>
+                            <td><strong>创建时间</strong></td>
+                            <td class="text-left"> 	2020-12-08 16:18:31</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 16px"><strong>订单状态</strong></p>
+                <table class="table table-bordered table-hover">
+                    <thead class="bg-1">
+                        <tr>
+                            <th>订单状态</th>
+                            <th>操作 <i class="iconfont iconfont-question" data-toggle="tooltip" data-placement="top" data-original-title="点击该按钮查看详情" onclick="orderActionInfo();"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>待付款</strong></td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-xs" onclick="setOrderStatus(258, '-10')">取消订单</button>
+                                <button type="button" class="btn btn-primary btn-xs" onclick="layerOpen('shipment.html', '发货', '840px', '400px')" >确认发货</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 16px"><strong>物流信息</strong></p>
+                <table class="table table-bordered table-hover">
+                    <thead class="bg-1">
+                        <tr>
+                            <th>配送方式</th>
+                            <th>快递单号</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>顺丰快递</td>
+                            <td>00000000000000000</td>
+                        </tr>
+                    </tbody>
+                </table>
+             </div>
+             <div class="col-xs-6">
+                <p style="font-size: 16px"><strong>收货地址</strong></p>
+                <table class="table table-bordered table-hover">
+                    <tbody>
+                        <tr>
+                            <td><strong>收货人姓名</strong></td>
+                            <td class="text-left">刘亦菲</td>
+                        </tr>
+                        <tr>
+                            <td><strong>联系方式</strong></td>
+                            <td class="text-left">12345678910</td>
+                        </tr>
+                        <tr>
+                            <td><strong>详细地址</strong></td>
+                            <td class="text-left">河南省 郑州市 金水区 具体地点12号</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p style="font-size: 16px"><strong>买家信息</strong></p>
+                <table class="table table-bordered table-hover">
+                    <tbody>
+                        <tr>
+                            <td><strong>用户昵称</strong></td>
+                            <td class="text-left">u1612160920</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email</strong></td>
+                            <td class="text-left">0000000@email.com</td>
+                        </tr>
+                        <tr>
+                            <td><strong>联系方式</strong></td>
+                            <td class="text-left">12345678910</td>
+                        </tr>
+                        <tr>
+                            <td><strong>性别</strong></td>
+                            <td class="text-left">男</td>
+                        </tr>
+                        <tr>
+                            <td><strong>账户余额</strong></td>
+                            <td class="text-left">4986408.93</td>
+                        </tr>
+                        <tr>
+                            <td><strong>注册时间</strong></td>
+                            <td class="text-left">2020-09-28 12:05:18</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 16px"><strong>用户留言</strong></p>
+                <table class="table table-bordered table-hover">
+                    <tbody>
+                        <tr>
+                            <td class="text-left">我很喜欢你们的产品，请注意包装，谢谢。</td>
+                        </tr>
+                    </tbody>
+                </table>
+             </div>
+        </div>   
+        <p style="font-size: 16px"><strong>交易快照</strong></p>
+        <table class="table table-bordered table-hover">
+            <thead class="bg-1">
+                <tr>
+                    <th>产品 ID</th>
+                    <th>SKU</th>
+                    <th>封面图</th>
+                    <th>产品名</th>
+                    <th>销售规格</th>
+                    <th>成交单价</th>
+                    <th>购买数量</th>
+                    <th>总金额</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>200</td>
+                    <td>15982352164749</td>
+                    <td><img src="images/demo/product/1.jpg" class="wh-50x50" /></td>
+                    <td>阿迪达斯短袖女2020夏季新款官网正品修身显瘦休闲半袖运动T恤女</td>
+                    <td>
+                        <span class="margin-r-3">白色</span>
+                        <span class="margin-r-3">256G</span>
+                    </td>
+                    <td>¥ 1499.00</td>
+                    <td>1</td>
+                    <td>¥ 1499.00</td>
+                </tr>
+                <tr>
+                    <td>200</td>
+                    <td>15982352164749</td>
+                    <td><img src="images/demo/product/1.jpg" class="wh-50x50" /></td>
+                    <td>阿迪达斯短袖女2020夏季新款官网正品修身显瘦休闲半袖运动T恤女</td>
+                    <td>
+                        <span class="margin-r-3">白色</span>
+                        <span class="margin-r-3">256G</span>
+                    </td>
+                    <td>¥ 1499.00</td>
+                    <td>1</td>
+                    <td>¥ 1499.00</td>
+                </tr>
+                <tr>
+                    <td colspan="7"></td>
+                    <td>运费：¥ 10</td>
+                </tr>
+                <tr>
+                    <td colspan="7"></td>
+                    <td>总金额：¥ 5600.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script type="text/javascript">
+function setOrderStatus(order_id, status)
+{
+    layer.confirm('确认操作？', function(index) {
+        layer.closeAll(); var load = layer.load();
+        $.ajax({
+            url: '',
+            type: 'GET',
+            success: function(res) {
+                layer.close(load);
+                if (res.code == 401) {
+                    goLogin(); return false;
+                }
+                if (res.code == 200) {
+                    layer.msg('操作成功', { time: 1500 }, function () { window.location.reload(); });
+                } else if (res.code == 400) {
+                    layer.msg(res.message); return false;
+                } else {
+                    layer.msg('操作失败'); return false;
+                }
+            }
+        })
+    })
+}
+
+function orderActionInfo()
+{
+    let str = '';
+    str += '<div style="padding: 15px">';
+    str += '<p><b>取消订单</b>：当订单状态为已取消之外的状态时，后台可手动取消该订单。</p>';
+    str += '<p><b>确认发货</b>：当订单状态为待发货时，后台可操作订单发货。点击确认发货按钮，在新打开的发货页面选择配送方式，并填写快递单号。</p>';
+    str += '<p><b>确认收货</b>：当订单状态为待收货时，后台可手动修改订单状态为待收货。</p>';
+    str += '<hr/>';
+    str += '<p>详情点击查看 <a href="" target="_blank">帮助文档</a></p>';
+    str += '</div>';
+    layer.open({
+        type: 1, 
+        title: '操作说明',
+        area: ['500px', '250px'],
+        maxmin: true,
+        content: str,
+    });
+}
+</script>
+</body>
+</html>

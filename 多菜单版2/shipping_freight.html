@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/3.3.7/css/bootstrap.css" >
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+<link rel="stylesheet" type="text/css" href="style/freight.css" />
+</head> 
+<body>
+<div class="main">
+    <ol class="breadcrumb">
+        <li class="icon_home iconfont">首页</li>
+        <li>订单物流</li>
+        <li class="active">运费模板</li>
+    </ol>
+    <div class="bg-1 clearfix main-head-info">
+        <a class="btn btn-success btn-sm" href="">创建运费模板</a>
+        <span class="pull-right margin-t-5">共有数据：<strong>5</strong> 条</span>
+    </div>
+    <div class="main-con">
+        <div class="freight-item">
+            <h2 class="freight-title">
+                件数计算案例
+                <span class="freight-type">件数</span>
+                <span class="freight-description"><i class="iconfont iconfont-question" data-toggle="tooltip" data-placement="top" data-original-title="简单描述占位"></i></span>
+                <span class="float-right">
+                    <a class="btn btn-primary btn-xs" href="">编辑</a>
+                    <button onclick="delAction(1)" class="btn btn-danger btn-xs">删除</button>
+                </span>
+            </h2>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th width="25%">配送区域</th>
+                        <th>首件数（件）</th>
+                        <th>运费（元）</th>
+                        <th>续件数（件）</th>
+                        <th>运费（元）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>全国</td>
+                        <td>10</td>
+                        <td>15.00</td>
+                        <td>5</td>
+                        <td>12.00</td>
+                    </tr>
+                    <tr>
+                        <td>郑州市,漯河市</td>
+                        <td>10</td>
+                        <td>15.00</td>
+                        <td>5</td>
+                        <td>12.00</td>
+                    </tr>
+                    <tr>
+                        <td>郑州市,许昌市</td>
+                        <td>10</td>
+                        <td>15.00</td>
+                        <td>5</td>
+                        <td>12.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="freight-item">
+            <h2 class="freight-title">
+                件数计算案例
+                <span class="freight-type">件数</span>
+                <span class="freight-description"><i class="iconfont iconfont-question" data-toggle="tooltip" data-placement="top" data-original-title="简单描述占位"></i></span>
+                <span class="float-right">
+                    <a class="btn btn-primary btn-xs" href="">编辑</a>
+                    <button onclick="delAction(1)" class="btn btn-danger btn-xs">删除</button>
+                </span>
+            </h2>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th width="25%">配送区域</th>
+                        <th>首件数（件）</th>
+                        <th>运费（元）</th>
+                        <th>续件数（件）</th>
+                        <th>运费（元）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>全国</td>
+                        <td>10</td>
+                        <td>15.00</td>
+                        <td>5</td>
+                        <td>12.00</td>
+                    </tr>
+                    <tr>
+                        <td>郑州市,漯河市</td>
+                        <td>10</td>
+                        <td>15.00</td>
+                        <td>5</td>
+                        <td>12.00</td>
+                    </tr>
+                    <tr>
+                        <td>郑州市,许昌市</td>
+                        <td>10</td>
+                        <td>15.00</td>
+                        <td>5</td>
+                        <td>12.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="freight-item">
+            <h2 class="freight-title">
+                件数计算案例
+                <span class="freight-type">件数</span>
+                <span class="freight-description"><i class="iconfont iconfont-question" data-toggle="tooltip" data-placement="top" data-original-title="简单描述占位"></i></span>
+                <span class="float-right">
+                    <a class="btn btn-primary btn-xs" href="">编辑</a>
+                    <button onclick="delAction(1)" class="btn btn-danger btn-xs">删除</button>
+                </span>
+            </h2>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th width="25%">配送区域</th>
+                        <th>首件数（件）</th>
+                        <th>运费（元）</th>
+                        <th>续件数（件）</th>
+                        <th>运费（元）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>全国</td>
+                        <td>10</td>
+                        <td>15.00</td>
+                        <td>5</td>
+                        <td>12.00</td>
+                    </tr>
+                    <tr>
+                        <td>郑州市,漯河市</td>
+                        <td>10</td>
+                        <td>15.00</td>
+                        <td>5</td>
+                        <td>12.00</td>
+                    </tr>
+                    <tr>
+                        <td>郑州市,许昌市</td>
+                        <td>10</td>
+                        <td>15.00</td>
+                        <td>5</td>
+                        <td>12.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page">
+            <ul class="pagination"><li class="disabled"><span>«</span></li> <li class="active"><span>1</span></li><li><a href="">2</a></li><li><a href="">3</a></li><li><a href="">4</a></li><li><a href="">»</a></li></ul>        
+        </div>
+        <p class="color-red text-center none">数据为空！</p>
+    </div>
+</div>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script type="text/javascript">
+function delAction(id = '')
+{
+    layer.confirm('确认删除？<br/>删除后将解除已绑定产品的关系。', function(index){
+        layer.closeAll(); var load = layer.load();
+        $.ajax({
+            url: '',
+            type: 'GET',
+            success: function(res) {
+                layer.close(load);
+                if (res.code == 401) {
+                    goLogin(); return false;
+                }
+                if (res.code == 200) {
+                    layer.msg('提交成功', {time: 1500}, function() {window.location.reload();});
+                } else if (res.code == 400) {
+                    layer.msg(res.message); return false;
+                } else {
+                    layer.msg('操作失败'); return false;
+                }
+            }
+        });     
+    });
+} 
+</script>
+</body>
+</html>

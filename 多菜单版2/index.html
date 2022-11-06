@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/3.3.7/css/bootstrap.css" >
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<body>
+<header>
+	<div class="logo">
+		<a href="">
+			<img src="images/logo.svg" />
+			<h1>LuckAdmin Tpl</h1>
+		</a>
+	</div>
+	<div class="bd">
+		<ul class="menu" id="menu">
+			<li class="active"><i class="iconfont">&#xe61a;</i>首页</li>
+			<li><i class="iconfont">&#xe63a;</i>产品</li>
+			<li><i class="iconfont">&#xe63a;</i>订单物流</li>
+			<li><i class="iconfont">&#xe63a;</i>运营</li>
+			<li><i class="iconfont">&#xe63a;</i>设置</li>
+		</ul>
+		<ul class="account">
+			<li class="user_info">
+				<i class="iconfont"></i>admin
+				<div class="items">
+					<div class="item" onclick="layerOpen('account_edit.html', '设置资料', '768px', '425px')">设置资料</div>
+					<a href="" target="_blank"><div class="item">查看首页</div></a>
+				</div>
+			</li>
+			<li class="logout" onclick="logout_admin();"><i class="iconfont"></i>退出</li>
+		</ul>
+	</div>
+</header>
+<div id="sidebar">
+	<div class="box">
+		<div class="items">
+			<div class="items-title"><i class="iconfont">&#xe63a;</i>Dashboard</div>
+			<div class="item">
+				<a href="welcome.html" target="main">仪表盘</a>
+			</div>
+		</div>
+	</div>
+	<div class="box">
+		<div class="items">
+			<div class="items-title"><i class="iconfont">&#xe63a;</i>产品管理</div>
+			<div class="item">
+				<a href="category_list.html" target="main">产品分类</a>
+				<a href="category_create.html" target="main">创建分类</a>
+				<a href="product_list.html" target="main">产品列表</a>
+				<a href="product_create.html" target="main">创建产品</a>
+				<a href="brand_list.html" target="main">品牌管理</a>
+				<a href="brand_create.html" target="main">创建品牌</a>
+			</div>
+		</div>
+	</div>
+	<div class="box">
+		<div class="items">
+			<div class="items-title"><i class="iconfont">&#xe63a;</i>订单物流</div>
+			<div class="item">
+				<a href="shipping_mark.html" target="main">配送方式</a>
+				<a href="shipping_freight.html" target="main">运费模板</a>
+				<a href="order_list.html" target="main">订单管理</a>
+				<a href="order_show.html" target="main">订单详情</a>
+			</div>
+		</div>
+		<div class="items">
+			<div class="items-title"><i class="iconfont">&#xe63a;</i>订单物流</div>
+			<div class="item">
+				<a href="shipping_mark.html" target="main">配送方式</a>
+				<a href="shipping_freight.html" target="main">运费模板</a>
+				<a href="order_list.html" target="main">订单管理</a>
+				<a href="order_show.html" target="main">订单详情</a>
+			</div>
+		</div>
+	</div>
+	<div class="box">
+		<div class="items">
+			<div class="items-title"><i class="iconfont">&#xe63a;</i>用户管理</div>
+			<div class="item">
+				<a href="user_list.html" target="main">用户列表</a>
+				<a href="user_edit.html" target="main">编辑用户</a>
+			</div>
+		</div>
+	</div>
+	<div class="box">
+		<div class="items">
+			<div class="items-title"><i class="iconfont">&#xe63a;</i>设置中心</div>
+			<div class="item">
+				<a href="set_system.html" target="main">系统设置</a>
+				<a href="image.html" target="main">图片管理</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main">
+	<iframe src="welcome.html" frameborder="0" name="main"></iframe>
+</div>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+</body>
+</html>

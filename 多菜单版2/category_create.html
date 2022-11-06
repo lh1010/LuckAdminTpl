@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/3.3.7/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<body>
+<div class="main">
+    <ol class="breadcrumb">
+        <li class="icon_home iconfont">首页</li>
+        <li>产品管理</li>
+        <li><a href="">产品分类</a></li>
+        <li class="active">创建分类</li>
+    </ol>
+    <div class="main-head-info error-info bg-danger"></div>
+    <div class="main-con">
+        <ul class="nav nav-tabs" id="tabs">
+            <li class="active"><a href="javascript:void(0);" data-id="#general">基础信息</a></li>
+            <li><a href="javascript:void(0);" data-id="#seo">SEO</a></li>
+        </ul>
+        <form class="form-horizontal margin-t-30" id="form" action="" method="post">
+            <div id="general" class="tab-box">
+                <div class="form-group">
+                    <span class="col-sm-2 control-label"><span class="color-red">*</span> 分类名字：</span>
+                    <div class="col-sm-8 input-group">
+                        <input class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label">上级分类：</span>
+                    <div class="col-sm-2 input-group">
+                        <select class="form-control" name="parent_id">
+                            <option>顶级分类</option>
+                            <option>家用电器</option>
+                            <option>&nbsp;&nbsp;&nbsp;&nbsp;大家电</option>
+                            <option>时尚女装</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label"><i class="iconfont iconfont-question" data-toggle="tooltip"
+                            data-placement="top" data-original-title="建议尺寸：600X250，三级分类建议尺寸：200X200"></i>
+                        封面图：</span>
+                    <div class="col-sm-4 input-group">
+                        <div class="fmr wh-80x80" data-name="wechat_app_cover"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label"><i class="iconfont iconfont-question" data-toggle="tooltip" data-placement="top" data-original-title="排序值越大，排序越高"></i> 排序：</span>
+                    <div class="col-sm-2 input-group"><input class="form-control" name="sort"></div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label">状态：</span>
+                    <div class="col-sm-2 input-group">
+                        <select class="form-control" name="status">
+                            <option value="1">开启</option>
+                            <option value="0">关闭</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="seo" class="tab-box">	
+                <div class="form-group">
+                    <span class="col-sm-2 control-label">关键词：</span>
+                    <div class="col-sm-8 input-group">
+                        <input class="form-control" name="keyword">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label">简要描述：</span>
+                    <div class="col-sm-8 input-group">
+                        <textarea class="form-control" rows="3" name="description"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="foot_btn_blank"></div>
+            <div class="foot_btn">
+                <div class="box">
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/3.3.7/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<!-- jquery.validation -->
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="plugins/jquery.validation/1.14.0/config.js"></script>
+<script type="text/javascript" src="plugins/jquery.form.js"></script>
+<script type="text/javascript">
+$("#form").validate({
+	rules: {
+		name: {required: true},
+	},
+	messages: {
+		name: '分类名不能为空',
+	},
+	submitHandler:function(){
+		layer.confirm('确认提交？', {
+		    btn: ['确认','取消']
+		}, function(){
+			var load = layer.load();
+			$("#form").ajaxSubmit(function(data) {
+				layer.close(load);
+			});
+		});	
+	},
+	invalidHandler: function(form, validator) {
+         goTop();
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后台管理</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="font/iconfont/iconfont.css">
+<link rel="stylesheet" type="text/css" href="plugins/Bootstrap/5.0.1/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+<style>
+html, body {
+	height: 100%;
+}
+</style>
+</head>
+<body>
+<div id="sidebar">
+  <div class="logo-box">
+    <img src="images/logo.svg" />
+    <span>后台管理</span>
+  </div>
+  <div class="items-box">
+    <div class="items">
+      <div class="items-title">
+        <i class="iconfont luck-icon-file"></i><span>常用功能</span><i class="iconfont luck-icon-right"></i>
+      </div>
+      <div class="items-list">
+        <a class="item" href="welcome.html" target="main">欢迎页面</a>
+        <a class="item" href="data_a.html" target="main">数组总览</a>
+      </div>
+    </div>
+    <div class="items">
+      <div class="items-title">
+        <i class="iconfont luck-icon-file"></i><span>表单页</span><i class="iconfont luck-icon-right"></i>
+      </div>
+      <div class="items-list">
+        <a class="item" href="form.html" target="main">基础表单</a>
+        <a class="item" href="form_tabs.html" target="main">分层表单</a>
+        <a class="item" href="form_module.html" target="main">分块表单</a>
+        <a class="item" href="form_upload.html" target="main">上传表单</a>
+      </div>
+    </div>
+    <div class="items">
+      <div class="items-title">
+        <i class="iconfont luck-icon-file"></i><span>列表页</span><i class="iconfont luck-icon-right"></i>
+      </div>
+      <div class="items-list">
+        <a class="item" href="table.html" target="main">基础表格</a>
+      </div>
+    </div>
+    <div class="items">
+      <a class="items-title items-onepage" href="welcome.html" target="main">
+        <i class="iconfont luck-icon-file"></i><span>单页面</span>
+      </a>
+    </div>
+    <div class="items">
+      <div class="items-title">
+        <i class="iconfont luck-icon-file"></i><span>设置中心</span><i class="iconfont luck-icon-right"></i>
+      </div>
+      <div class="items-list">
+        <a class="item" href="page.html" target="main">系统设置</a>
+        <a class="item" href="page.html" target="main">图片管理</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="main">
+  <header>
+    <span class="mini-button"><i class="iconfont"></i></span>
+    <span>好风凭借力，送我上青云。</span>
+    <ul class="account">
+      <li class="user_info">
+        <i class="iconfont luck-icon-account"></i>西瓜
+        <div class="items">
+          <div class="item" onclick="layerOpen('page.html', '设置资料', '768px', '425px')">设置资料</div>
+          <a href="" target="_blank">
+            <div class="item">查看首页</div>
+          </a>
+        </div>
+      </li>
+      <li class="logout" onclick="logout_admin();"><i class="iconfont luck-icon-logout"></i>退出</li>
+    </ul>
+  </header>
+  <iframe src="welcome.html" frameborder="0" name="main"></iframe>
+</div>
+<script type="text/javascript" src="plugins/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="plugins/Bootstrap/5.0.1/js/bootstrap.js"></script>
+<script type="text/javascript" src="plugins/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+</body>
+</html>
