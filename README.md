@@ -1,4 +1,4 @@
-# 介绍
+### 介绍
 
 后台管理模板框架。
 
@@ -8,10 +8,10 @@ LcukAdminTpl 提供常规版和多菜单版本。
 
 样式布局参考蚂蚁金服 Ant Design Pro 框架。
 
-# 演示
+### 演示
 
-[常规版](http://luckadmintpl.lh707.com/常规版)
+[2.0](http://luckadmintpl.lh707.com/2.0/)
 
-[多菜单版](http://luckadmintpl.lh707.com/多菜单版)
+[2.1](http://luckadmintpl.lh707.com/2.1/)
 
-[多菜单版2](http://luckadmintpl.lh707.com/多菜单版2)
+[多菜单版](http://luckadmintpl.lh707.com/多菜单版2.0/)
