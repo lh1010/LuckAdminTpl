@@ -1,6 +1,6 @@
-### 介绍
+# 介绍
 
-后台管理模板框架，[领浩科技](https://linghao100.com)出品。
+后台管理模板框架。
 
 LcukAdminTpl 提供常规版和多菜单版本。
 
@@ -8,7 +8,7 @@ LcukAdminTpl 提供常规版和多菜单版本。
 
 样式布局参考蚂蚁金服 Ant Design Pro 框架。
 
-### 演示
+# 演示
 
 [常规版](http://luckadmintpl.lh707.com/常规版)
 
